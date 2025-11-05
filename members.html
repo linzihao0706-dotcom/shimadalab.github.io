@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja" data-page="members">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>島田研究室 — メンバー紹介</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script defer src="assets/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">島田研究室 <span class="brand-sub">Shimada Laboratory</span></a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link" data-key="home">ホーム</a>
+        <a href="news.html" class="nav-link" data-key="news">ニュース</a>
+        <a href="research.html" class="nav-link" data-key="research">研究テーマ</a>
+        <a href="policy.html" class="nav-link" data-key="policy">運営方針</a>
+        <a href="members.html" class="nav-link" data-key="members">メンバー紹介</a>
+        <a href="publications.html" class="nav-link" data-key="publications">研究業績</a>
+        <a href="projects.html" class="nav-link" data-key="projects">プロジェクト紹介</a>
+        <a href="access.html" class="nav-link" data-key="access">アクセス</a>
+      </nav>
+      <button class="nav-toggle" aria-label="メニュー">☰</button>
+    </div>
+  </header>
+
+  <!-- ✅ 关键：加入 main + container，统一左右留白 -->
+  <main class="section">
+    <div class="container">
+      <h1 class="page-title">メンバー紹介（Members）</h1>
+
+      <!-- 教員 -->
+      <section class="members-section">
+        <h2 class="section-heading">教員</h2>
+        <div class="members-grid">
+          <article class="member-card">
+            <!-- 有照片时请改为 <img src="assets/members/shimada.jpg" class="avatar-large" alt="島田 淳一"> -->
+            <div class="avatar-large"></div>
+            <div class="member-info">
+              <h3 class="card-title">島田 淳一</h3>
+              <p class="member-role">指導教員 / Professor</p>
+              <p class="member-topics">研究関心：産学官連携、地域連携、プロジェクトデザイン、MOT、情報通信政策</p>
+            </div>
+          </article>
+          <!-- 如需第二位教員，复制上面的 article 即可 -->
+        </div>
+      </section>
+
+      <!-- 博士後期課程（D） -->
+      <section class="members-section">
+        <h2 class="section-heading">博士後期課程</h2>
+        <div class="members-grid">
+          <article class="member-card">
+            <div class="avatar-large"></div>
+            <div class="member-info">
+              <h3 class="card-title">○○ 太郎</h3>
+              <p class="member-role">D1</p>
+              <p class="member-topics">研究関心：○○</p>
+            </div>
+          </article>
+
+          <article class="member-card">
+            <div class="avatar-large"></div>
+            <div class="member-info">
+              <h3 class="card-title">○○ 太郎</h3>
+              <p class="member-role">D2</p>
+              <p class="member-topics">研究関心：○○</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 博士前期課程（M） -->
+      <section class="members-section">
+        <h2 class="section-heading">博士前期課程</h2>
+        <div class="members-grid">
+          <article class="member-card">
+            <div class="avatar-large"></div>
+            <div class="member-info">
+              <h3 class="card-title">林 子豪</h3>
+              <p class="member-role">M1（知識科学）</p>
+              <p class="member-topics">研究関心：Human–AI協働設計、知識共有支援、創造性支援メディア。</p>
+            </div>
+          </article>
+
+          <article class="member-card">
+            <div class="avatar-large"></div>
+            <div class="member-info">
+              <h3 class="card-title">唐 吉斯</h3>
+              <p class="member-role">M1（知識科学）</p>
+              <p class="member-topics">研究関心：中小企業支援、起業環境研究、中小企業クラスター</p>
+            </div>
+          </article>
+          <!-- 如需更多成员，继续追加 article；两列会自动换行 -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2025 Shimada Laboratory, JAIST.</div>
+  </footer>
+</body>
+</html>

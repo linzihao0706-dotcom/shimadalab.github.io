@@ -1,0 +1,208 @@
+:root{
+  /* Light, JAIST‑like palette */
+  --bg:#f7f9fc;          /* near‑white */
+  --bg-soft:#ffffff;     /* cards */
+  --text:#0b1220;        /* deep navy text */
+  --muted:#5a6b85;       /* secondary */
+  --brand:#1a5fb4;       /* JAIST‑ish blue */
+  --brand-2:#00a3a3;     /* teal accent */
+  --line:#e2e8f0;        /* separators */
+  --shadow:0 10px 24px rgba(20,30,60,.06);
+  --radius:16px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,"Noto Sans JP",Helvetica,Arial}
+img{max-width:100%;display:block}
+.container{width:min(1100px,92%);margin-inline:auto}
+
+/* Header/Nav */
+.site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.85);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
+.brand{font-weight:800;text-decoration:none;color:var(--text)}
+.brand-sub{font-weight:500;color:var(--muted);margin-left:.35rem}
+.nav{display:flex;gap:.6rem;align-items:center}
+.nav-link{padding:.55rem .7rem;border-radius:12px;color:var(--text);text-decoration:none}
+.nav-link:hover{background:#eef5ff}
+.nav-link.active{background:#e6f0ff;color:#0b3e91}
+.nav-toggle{display:none}
+@media (max-width:900px){.nav{display:none}.nav.open{display:flex;flex-direction:column;position:absolute;right:4%;top:58px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:.4rem}.nav-toggle{display:inline-flex}}
+
+/* -------------------------------------- Hero ------------------------------------------------- */
+
+/* === HERO (centered text + background image) === */
+.hero {
+  position: relative;
+  padding: min(14vh, 8rem) 0;
+  min-height: 65vh;
+  border-bottom: 1px solid var(--line);
+
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,.55), rgba(247,249,252,.88)),
+    url('./hero-bg.jpg');
+  background-position: center 30%;  /* 显示位置，可调 */
+  background-size: cover;           /* ← 这就是关键 */
+  background-repeat: no-repeat;
+}
+
+.hero-inner{
+  display: grid;
+  place-items: center;                 /* 横纵都居中 */
+  text-align: center;                  /* 文本居中 */
+  gap: 1rem;
+}
+
+/* 标题更大，流体排版 */
+.hero-text h1{
+  font-size: clamp(36px, 6.2vw, 64px);
+  line-height: 1.12;
+  margin: .2rem 0;
+}
+
+/* 副标题稍大一点，浅色主题下增强可读性 */
+.lead{
+  color: var(--text);
+  opacity: .5;
+  font-size: clamp(14px, 2vw, 20px);
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/* 移动端微调留白 */
+@media (max-width: 900px){
+  .hero{ padding: 16vh 0; min-height: 56vh; }
+}
+
+
+/* ------------------------------------------ Sections -------------------------------------------------------------- */
+.section{padding:2.2rem 0}
+.section-title{font-size:1.5rem;margin:0 0 1rem}
+.grid{display:grid;gap:1rem}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.cols-2{grid-template-columns:repeat(2,1fr)}
+@media (max-width:900px){.cols-3,.cols-2{grid-template-columns:1fr}}
+
+.card{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:1.1rem;box-shadow:var(--shadow)}
+.card-title{margin:.2rem 0 .4rem;font-size:1.15rem}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+.inline-link{color:var(--brand);text-decoration:none}
+.inline-link:hover{text-decoration:underline}
+/* === Home main buttons below highlight === */
+.home-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+.home-buttons .btn {
+  padding: .85rem 1.6rem;
+  font-size: 1.05rem;
+}
+
+
+
+/* ----------------------------------------------------- News --------------------------------------------------------------------- */
+.news-list{list-style:none;padding:0;margin:0;display:grid;gap:.8rem}
+.news-item{display:flex;gap:.8rem;align-items:flex-start}
+.news-date{font-weight:700;color:#0b3e91}
+
+
+/* ----------------------------------------------------- Members ----------------------------------------------------- */
+/* 两列布局 + 左侧大头像位，兼容原命名 */
+
+.members-section {
+  margin: 2.4rem 0;
+}
+.members-section .section-heading {
+  font-size: 1.35rem;
+  margin: 0 0 1rem;
+  font-weight: 800;
+}
+
+/* 网格两列布局 */
+.members-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 900px) {
+  .members-grid { grid-template-columns: 1fr; }
+}
+
+/* 成员卡片：左头像 + 右信息 */
+.member-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.2rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* 大头像位：即使无图片也保持尺寸 */
+.avatar-large {
+  flex: 0 0 140px;
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: linear-gradient(135deg, #d6e9ff, #e7fbfb);
+  object-fit: cover;
+  object-position: center;
+}
+@media (max-width: 900px) {
+  .avatar-large { flex-basis: 120px; width: 120px; height: 120px; }
+}
+
+/* 文字信息部分 */
+.member-info {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+.member-info .card-title {
+  margin: .1rem 0 .2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.member-role {
+  color: var(--muted);
+  font-size: .95rem;
+}
+.member-topics {
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+/* 旧样式的兼容：保留小头像类，供他处复用 */
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d6e9ff, #e7fbfb);
+  border: 1px solid var(--line);
+}
+
+
+/* Projects */
+.project-card .thumb-light{height:150px;border-radius:12px;border:1px solid var(--line);background:linear-gradient(120deg,#e7fbfb,#eef5ff)}
+.project-card .pad{padding:.8rem 0 0}
+
+/* Map */
+.map-thumb{height:180px;border-radius:12px;border:1px solid var(--line);background:linear-gradient(120deg,#eef5ff,#f7f9fc)}
+.map-embed{height:260px;border-radius:12px;border:1px solid var(--line);background:linear-gradient(120deg,#eef5ff,#f7f9fc)}
+
+/* Prose */
+.prose h2{margin:0 0 .6rem}
+.prose ul{padding-left:1.2rem}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--line);padding:1.2rem 0;color:var(--muted);margin-top:1rem}
+
+/* Page title */
+.page-title{font-size:1.6rem;margin:.4rem 0 1rem}
