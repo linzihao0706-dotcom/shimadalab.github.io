@@ -101,7 +101,43 @@ img{max-width:100%;display:block}
   font-size: 1.05rem;
 }
 
+/* ===== introduction of lab ===== */
+.prof-bubble { padding: 1.2rem 1.2rem 1.4rem; position: relative; }
+.prof-bubble::after{
+  /* 气泡尾巴（下边缘中部的小三角） */
+  content: "";
+  position: absolute; left: 56px; bottom: -12px;
+  width: 0; height: 0;
+  border: 12px solid transparent;
+  border-top-color: var(--bg-soft);        /* 让尾巴颜色与卡片一致 */
+  filter: drop-shadow(0 2px 2px rgba(20,30,60,.06));
+}
 
+.prof-bubble-body{
+  display: grid;
+  grid-template-columns: 84px 1fr;  /* 左头像 + 右文本 */
+  gap: 1rem; align-items: start;
+}
+@media (max-width: 900px){
+  .prof-bubble-body{ grid-template-columns: 64px 1fr; }
+}
+
+/* 头像（有图片时，用 <img class="prof-avatar" src="assets/members/shimada.jpg">） */
+.prof-avatar{
+  width: 84px; height: 84px; border-radius: 50%;
+  border: 1px solid var(--line);
+  background: linear-gradient(135deg,#d6e9ff,#e7fbfb);
+  object-fit: cover; object-position: center;
+}
+@media (max-width: 900px){
+  .prof-avatar{ width: 64px; height: 64px; }
+}
+
+.prof-text{ display: grid; gap: .4rem; }
+.prof-lead{
+  font-size: clamp(16px, 2.1vw, 20px);
+  margin: 0; line-height: 1.5;
+}
 
 /* ----------------------------------------------------- News --------------------------------------------------------------------- */
 .news-list{list-style:none;padding:0;margin:0;display:grid;gap:.8rem}
@@ -206,3 +242,6 @@ img{max-width:100%;display:block}
 
 /* Page title */
 .page-title{font-size:1.6rem;margin:.4rem 0 1rem}
+
+
+
