@@ -1,4 +1,4 @@
-shimadalab v0.1
+shimadalab v0.1<br>
 JAIST 島田研究室のWebサイト制作プロジェクトです。
 研究室メンバーと協力しながら、情報整理・UI構成・GitHubを用いた共同開発を進めています。
 
